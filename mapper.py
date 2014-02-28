@@ -82,7 +82,7 @@ def insert():
         q_isbn = request.form['q_isbn']
         q_page_no = request.form['q_page_no']
         q_tags = request.form['q_tags'].split(', ')
-            g.db.execute('insert into quotes values (NULL, ?, ?, ?, ?)', [q_title, q_quote, q_isbn, q_page_no])
+        g.db.execute('insert into quotes values (NULL, ?, ?, ?, ?)', [q_title, q_quote, q_isbn, q_page_no])
         g.db.commit()
         new_id = int(g.db.execute('select id from quotes order by id desc limit 1;').fetchone()[0])
         for tag in q_tags:

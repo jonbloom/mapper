@@ -1,3 +1,26 @@
+{% macro quote(id,title,quote,isbn,page_no,tags) -%}
+
+    <div class='col-md-3'>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+          <h3 class="panel-title">{{title}}</h3>
+      </div>
+      <div class="panel-body">
+        {{quote}}
+      </div>
+      <div class="panel-footer">
+        <span class="glyphicon glyphicon-tags"></span>
+        {% for t in tags %}
+          <a href='/tag/{{t}}'>{{t}}</a> 
+        {% endfor %}
+        <a class='pull-right glyphicon glyphicon-remove' href='/delete/{{id}}'></a>
+      </div>
+    </div>
+  </div>
+  {%- endmacro %}
+
+
+
 <html>
 <head>
 	<head>

@@ -70,7 +70,7 @@ def display_tag(tag):
         tags_for_post = []
         for tag in tags:
             tags_for_post.append(tag[0])
-        current_quote = Quote.Quote(quote_query[0],quote_query[1],quote_query[2],quote_query[3],quote_query[4],tags_for_post)
+        current_quote = Quote.Quote(quote_query[0],quote_query[1],quote_query[2],tags_for_post)
         tagged_quotes.append(current_quote)
     return render_template('quotes.html', quotes = tagged_quotes)
 
